@@ -1,0 +1,218 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[italian]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.85,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underline
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{3.6pt}
+
+% Adjust margins - slightly tighter top/bottom
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.55in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% sans serif sections - reduced spacing
+\titleformat {\section}{
+    \bfseries \vspace{-3pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[1.5pt]} \vspace{1pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{0pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0.7pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Federico Porpora} \\ \vspace{1pt}
+    \small 
+    \faMapMarker* Via Cimabue 19, 52100 Arezzo, Italia \hspace{1pt} $|$
+    \hspace{1pt} \faPhone* +39 380 778 4837 \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} porporafederico@gmail.com \\ \vspace{1pt}
+    \faLinkedin \hspace{2pt} \href{https://linkedin.com/in/federicoporpora}{\myuline{federicoporpora}} \hspace{1pt} $|$
+    \faGithub \hspace{2pt} \href{https://github.com/federicoporpora}{\myuline{federicoporpora}} \hspace{1pt} $|$
+    \faGlobe \hspace{2pt} \href{https://federicoporpora.github.io}{\myuline{federicoporpora.github.io}} \hspace{1pt} $|$
+    \faTelegram \hspace{2pt} @federicoporpora
+    \\ \vspace{-4pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{ISTRUZIONE E FORMAZIONE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Alma Mater Studiorum - Università di Bologna}{Sett. 2023 -- Dic. 2026 (Previsto)}
+      {Laurea in Ingegneria Informatica}{Bologna, Italia}
+      \resumeItemListStart
+        \resumeItem{\textbf{Corsi Principali}: Algoritmi e Strutture Dati, Sistemi Operativi (Unix), Architettura dei Calcolatori, Reti e Socket, Architetture Web, Ingegneria del Software, Cybersecurity.}
+        \resumeItem{In corso all'ultimo semestre; discussione della tesi prevista per Dicembre 2026.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{ESPERIENZE E VOLONTARIATO}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Cyberloop}{Apr. 2026 -- Lug. 2026}
+      {Tirocinante Cyber Security \& DevOps}{Remoto / Italia}
+      \resumeItemListStart
+        \resumeItem{Progettazione e deployment di uno stack completo SIEM e Incident Management con \textbf{Docker Compose}, integrando \textbf{Wazuh XDR}, \textbf{DFIR Iris} e \textbf{OpenSearch}.}
+        \resumeItem{Sviluppo di una pipeline di incident response automatizzata con AI tramite \textbf{Kestra} e LLM locali (\textbf{Ollama} con qwen2.5) per analizzare alert e isolare nodi di rete con Wazuh Active Response.}
+        \resumeItem{Creazione di script Python per generare regole \textbf{ElastAlert2} per rilevamento anomalie basato su soglie, monitorando API ed endpoint.}
+        \resumeItem{Configurazione di VM Windows/Linux con agenti Sysmon e Wazuh per File Integrity Monitoring (FIM) e rilevamento ransomware in tempo reale.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {AGESCI Arezzo 2}{Sett. 2024 -- Presente}
+      {Capo Scout}{Arezzo, Italia}
+      \resumeItemListStart
+        \resumeItem{Conduzione e organizzazione di attività educative per la crescita giovanile.}
+        \resumeItem{Gestione della logistica per uscite e campi all'aperto, coordinamento del team e percorsi formativi.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Circolo Arcobaleno - AIPD Arezzo}{Gen. 2023 -- Mag. 2023}
+      {Operatore Volontario (Settore Sociale)}{Arezzo, Italia}
+      \resumeItemListStart
+        \resumeItem{Organizzazione di attività ricreative ed educative per persone con Sindrome di Down.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{PROGETTI PERSONALI}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{StudyLink Platform} $|$ \emph{React.js, Node.js, SQL, API REST}}{}
+      \resumeItemListStart
+        \resumeItem{Progettazione e sviluppo di un'applicazione web full-stack per la condivisione di risorse universitarie.}
+        \resumeItem{Autenticazione sicura (JWT), sviluppo API RESTful e ottimizzazione schema relazionale (SQL) per garantire integrità dei dati.}
+        \resumeItem{Live Demo: \url{https://federicoporpora.github.io/studyLink-live}}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{intervals-icu-coach} $|$ \emph{Python, Intervals.icu API, Automazione Agentica}}{}
+      \resumeItemListStart
+        \resumeItem{Sviluppo di un motore di coaching autonomo per sport di endurance integrato con Intervals.icu tramite API REST.}
+        \resumeItem{Automazione della pianificazione degli allenamenti, monitoraggio dei parametri fisiologici e analisi delle attività.}
+        \resumeItem{Codice sorgente: \url{https://github.com/federicoporpora/intervals-icu-coach}}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Autonomous Cyber-Response Framework} $|$ \emph{Python, ChromaDB, Ollama, Wazuh, Docker}}{}
+      \resumeItemListStart
+        \resumeItem{Sviluppo di una pipeline di cyber-response autonoma con Wazuh XDR, OpenSearch, DFIR IRIS e LLM locali (Ollama) per automatizzare il triage e mitigare l'alert fatigue nel SOC.}
+        \resumeItem{Modulo RAG con ChromaDB e nomic-embed-text: vettorializzazione allarmi, recupero top-N per similarità coseno e arricchimento prompt con response di produzione, IoC e tattiche MITRE D3FEND.}
+        \resumeItem{Isolamento automatico dell'endpoint in tempo reale tramite Windows Filtering Platform (WFP) con tempo medio di risposta di approx. 60s.}
+      \resumeItemListEnd
+      
+    \resumeProjectHeading
+      {\textbf{Pipeline Ricalibrazione Dati GPX} $|$ \emph{Python, TCX, Telegram Bot API}}{}
+      \resumeItemListStart
+        \resumeItem{Sviluppo di un tool di sincronizzazione per unire dati cardio a tracce GPS per corse su tapis roulant o file corrotti.}
+        \resumeItem{Automazione dell'elaborazione tramite Bot Telegram dedicato con esportazione in formati pronti per Strava.}
+        \resumeItem{Codice sorgente: \url{https://github.com/federicoporpora/gpx-telegram-bot} $|$ Demo: \href{https://t.me/gpx_hr_merger_bot}{@gpx\_hr\_merger\_bot}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{CERTIFICAZIONI}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{C1 Advanced (CAE)} -- Cambridge Assessment English}{Mag. 2022}
+      \resumeItemListStart
+        \resumeItem{ID Credenziale: B8134268.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{COMPETENZE E INTERESSI}
+ \begin{itemize}[leftmargin=0in, label={}, itemsep=0.4pt]
+    \small{\item{
+     \textbf{Competenze Tecniche} {: C, Java, Python, JavaScript, SQL, Git, React.js, Node.js, Spring, Docker, DevOps, Wazuh, SIEM, OpenSearch, Kestra, Cybersecurity, Unix}\vspace{1pt} \\
+     \textbf{Lingue} {: Italiano (Madrelingua), Inglese (C1 Advanced), Spagnolo (A2)}\vspace{1pt} \\
+     \textbf{Soft Skills} {: Gestione del Tempo, Organizzazione, Problem Solving, Comunicazione, Teamwork}
+    }}
+ \end{itemize}
+
+
+
+%-------------------------------------------
+\end{document}

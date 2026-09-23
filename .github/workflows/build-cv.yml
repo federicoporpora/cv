@@ -1,0 +1,51 @@
+name: Build and Release CV
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile English CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Federico_Porpora_CV_EN.tex
+
+      - name: Compile Italian CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Federico_Porpora_CV_IT.tex
+
+      - name: Upload PDF Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: CV-PDFs
+          path: |
+            Federico_Porpora_CV_EN.pdf
+            Federico_Porpora_CV_IT.pdf
+
+      - name: Publish / Update Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Curriculum Vitae (EN & IT)
+          files: |
+            Federico_Porpora_CV_EN.pdf
+            Federico_Porpora_CV_IT.pdf
+          body: |
+            Ultima versione del Curriculum Vitae generata automaticamente via CI/CD.
+
+            - **English Version**: [Federico_Porpora_CV_EN.pdf](https://github.com/federicoporpora/cv/releases/download/latest/Federico_Porpora_CV_EN.pdf)
+            - **Versione Italiana**: [Federico_Porpora_CV_IT.pdf](https://github.com/federicoporpora/cv/releases/download/latest/Federico_Porpora_CV_IT.pdf)
