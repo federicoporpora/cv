@@ -1,0 +1,199 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underline
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins - slightly tighter top/bottom
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% sans serif sections - reduced spacing
+\titleformat {\section}{
+    \bfseries \vspace{1pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=1pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-2pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0.4pt, parsep=0.4pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Federico Porpora} \\ \vspace{4pt}
+    \small 
+    \faMapMarker* Via Cimabue 19, 52100 Arezzo, Italy \hspace{1pt} $|$
+    \hspace{1pt} \faPhone* +39 380 778 4837 \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} porporafederico@gmail.com \\ \vspace{4pt}
+    \faLinkedin \hspace{2pt} \href{https://linkedin.com/in/federicoporpora}{\myuline{federicoporpora}} \hspace{1pt} $|$
+    \faGithub \hspace{2pt} \href{https://github.com/federicoporpora}{\myuline{federicoporpora}} \hspace{1pt} $|$
+    \faGlobe \hspace{2pt} \href{https://federicoporpora.github.io}{\myuline{federicoporpora.github.io}} \hspace{1pt} $|$
+    \faTelegram \hspace{2pt} @federicoporpora
+    \\ \vspace{-4pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Alma Mater Studiorum - University of Bologna}{Sept. 2023 -- Oct. 2026 (Expected)}
+      {Bachelor's Degree in Computer Engineering}{Bologna, Italy}
+      \resumeItemListStart
+        \resumeItem{\textbf{Programming}: C, Java, Algorithms and Data Structures.}
+        \resumeItem{\textbf{Systems \& Architecture}: Computer Architecture (RISC/DLX), Operating Systems (Unix).}
+        \resumeItem{\textbf{Data \& Networks}: SQL Databases (DB-Main), Computer Networks (Socket Programming), Cybersecurity, Telecommunications.}
+        \resumeItem{\textbf{Web Development \& Technologies}: Web Protocols (HTTP/3, QUIC), Front-end (HTML/CSS, JS, React.js), Back-end (Servlet, JSP, Node.js), Enterprise Architectures (MVC, Spring, EJB), and WebSockets.}
+        \resumeItem{\textbf{Engineering}: Software Engineering, Automatic Control, Electrical Engineering, and Electronics.}
+        \resumeItem{Currently in final semester; Thesis defense expected Oct. 2026.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Liceo Scientifico ``F. Redi''}{Sept. 2018 -- June 2023}
+      {High School Diploma}{Arezzo, Italy}
+      \resumeItemListStart
+        \resumeItem{Traditional Scientific Curriculum: Mathematics, Physics, Natural Sciences, Latin.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {AGESCI Arezzo 2}{Sept. 2024 -- Present}
+      {Scout Leader}{Arezzo, Italy}
+      \resumeItemListStart
+        \resumeItem{Leading and organizing scouting activities for youth development.}
+        \resumeItem{Managing logistics, team dynamics, and educational programs.}
+        \resumeItem{Teaching practical skills, including outdoor survival and woodworking.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Circolo Arcobaleno - AIPD Arezzo}{Jan. 2023 -- May 2023}
+      {Volunteer Facilitator (Charity Sector)}{Arezzo, Italy}
+      \resumeItemListStart
+        \resumeItem{Organized recreational and educational activities for individuals with Down Syndrome.}
+        \resumeItem{Supported social integration and fostered personal autonomy.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Basilica di San Domenico}{Jan. 2022 -- May 2022}
+      {Meal Program Helper (Charity Sector)}{Arezzo, Italy}
+      \resumeItemListStart
+        \resumeItem{Responsible for basic food preparation and organization of the kitchen area.}
+        \resumeItem{Provided support and assistance to people in need within the local community.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{CERTIFICATIONS}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{C1 Advanced (CAE)} -- Cambridge Assessment English}{May 2022}
+      \resumeItemListStart
+        \resumeItem{Credential ID: B8134268.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{SOLIDWORKS Base} -- Attestato di Partecipazione}{June 2022}
+      \resumeItemListStart
+        \resumeItem{Issued by Liceo Scientifico ``F. Redi''.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}, itemsep=0.4pt]
+    \small{\item{
+     \textbf{Technical Skills} {: C, Java, Python, JavaScript, SQL, Git, React.js, Node.js, Spring, Cybersecurity, Socket Programming, Unix, SOLIDWORKS}\vspace{1pt} \\
+     \textbf{Languages} {: Italian (Native), English (C1 Advanced), Spanish (A2)}\vspace{1pt} \\
+     \textbf{Soft Skills} {: Time Management, Organisation, Problem Solving, Critical Thinking, Decision Making, Stress Management, Communication, Teamwork}\vspace{1pt} \\
+     \textbf{Other} {: Driving Licence (Category B)}\vspace{1pt} \\
+     \textbf{Interests} {: Running, Road Cycling, Volleyball, Tennis, Woodworking, Piano, Cooking, Scouting}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
