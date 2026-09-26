@@ -45,12 +45,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins - slightly tighter top/bottom
+% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{0in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.65in}
-\addtolength{\textheight}{1.55in}
+\addtolength{\topmargin}{-.48in}
+\addtolength{\textheight}{1.20in}
 
 \urlstyle{same}
 
@@ -116,11 +116,11 @@
 \section{EDUCATION}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Alma Mater Studiorum - University of Bologna}{Sept. 2023 -- Dec. 2026 (Expected)}
-      {Bachelor's Degree in Computer Engineering}{Bologna, Italy}
+      {Alma Mater Studiorum - University of Bologna}{Sept. 2023 -- Present}
+      {M.Sc. \& B.Sc. in Computer Engineering}{Bologna, Italy}
       \resumeItemListStart
-        \resumeItem{\textbf{Core Coursework}: Algorithms \& Data Structures, Operating Systems (Unix), Computer Architecture, Networks (Sockets), Web Architectures, Software Engineering, Cybersecurity.}
-        \resumeItem{Currently in final semester; Thesis defense expected Dec. 2026.}
+        \resumeItem{Master's Degree student; Bachelor's Thesis defense expected Dec. 2026.}
+        \resumeItem{\textbf{Core Coursework}: Algorithms \& Data Structures, Operating Systems (Unix), Computer Architecture, Networks, Software Engineering, Cybersecurity.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -129,13 +129,12 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Cyberloop}{Apr. 2026 -- July 2026}
-      {Cyber Security \& DevOps Intern}{Remote / Italy}
+      {Cyberloop}{Apr. 2026 -- Sept. 2026}
+      {Cyber Security \& DevOps Intern}{Cesena, Italy}
       \resumeItemListStart
-        \resumeItem{Engineered and deployed a comprehensive SIEM and Incident Management stack using \textbf{Docker Compose}, integrating \textbf{Wazuh XDR}, \textbf{DFIR Iris}, and \textbf{OpenSearch}.}
-        \resumeItem{Developed an automated, AI-driven incident response pipeline using \textbf{Kestra} and local LLMs (\textbf{Ollama} with qwen2.5) to analyze alerts and trigger network isolation via Wazuh Active Response.}
-        \resumeItem{Created Python scripts to auto-generate custom \textbf{ElastAlert2} rules for threshold-based anomaly detection, monitoring suspicious API and endpoint activity.}
-        \resumeItem{Configured Windows/Linux VMs with Sysmon and Wazuh agents for File Integrity Monitoring (FIM) and real-time ransomware threat detection.}
+        \resumeItem{Deployed an automated cyber-response pipeline into production within the Blue Team, accelerating triage and reducing false positive bias.}
+        \resumeItem{Implemented a RAG module using ChromaDB and nomic-embed-text to vectorize summarized alerts and retrieve similar cases via cosine similarity.}
+        \resumeItem{Engineered event-driven workflows with Trigger.dev and custom Wazuh detection rules, enabling host containment on Windows Filtering Platform.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -159,11 +158,20 @@
 \section{PROJECTS}
   \resumeSubHeadingListStart
     \resumeProjectHeading
+      {\textbf{Autonomous Cyber-Response Framework} $|$ \emph{Python, TypeScript, Wazuh, ChromaDB, Ollama, Docker}}{}
+      \resumeItemListStart
+        \resumeItem{Engineered an on-premise security automation pipeline using local LLMs via Ollama, ensuring strict GDPR compliance and zero external telemetry leakage.}
+        \resumeItem{Implemented a RAG module using ChromaDB and nomic-embed-text to vectorize summarized alerts and retrieve top similar historical cases by cosine similarity for dynamic prompt augmentation.}
+        \resumeItem{Automated real-time host containment through Wazuh Active Response on Windows Filtering Platform, validated against 27 enterprise alert benchmarks and live attack simulations.}
+        \resumeItem{Live Demo: \url{https://federicoporpora.github.io/autonomous-cyber-response}}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
       {\textbf{StudyLink Platform} $|$ \emph{React.js, Node.js, SQL, REST APIs}}{}
       \resumeItemListStart
         \resumeItem{Designed and developed a full-stack web application for resource sharing.}
         \resumeItem{Engineered secure user authentication (JWT), designed RESTful APIs, and optimized relational database schemas (SQL) to ensure robust data integrity.}
-        \resumeItem{Live Demo: \url{https://federicoporpora.github.io/studyLink-live}}
+        \resumeItem{Live Demo: \url{https://federicoporpora.github.io/StudyLink}}
       \resumeItemListEnd
 
     \resumeProjectHeading
@@ -172,14 +180,6 @@
         \resumeItem{Engineered an autonomous, agent-driven endurance coaching engine synchronizing with Intervals.icu via REST API.}
         \resumeItem{Automated workout planning, physiological wellness tracking, and activity analysis for runners and cyclists.}
         \resumeItem{Source code: \url{https://github.com/federicoporpora/intervals-icu-coach}}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Autonomous Cyber-Response Framework} $|$ \emph{Python, ChromaDB, Ollama, Wazuh, Docker}}{}
-      \resumeItemListStart
-        \resumeItem{Engineered an automated SOC defense pipeline with Wazuh XDR, OpenSearch, DFIR IRIS, and local LLMs (Ollama) to triage security alerts and mitigate alert fatigue.}
-        \resumeItem{Implemented a RAG module using ChromaDB and nomic-embed-text: compressed and vectorized alerts, retrieved top-N cosine-similar cases, and enriched prompts with production responses, IoCs, and MITRE D3FEND tactics.}
-        \resumeItem{Automated real-time endpoint isolation via Windows Filtering Platform (WFP) with an average response time of approx. 60s.}
       \resumeItemListEnd
       
     \resumeProjectHeading
@@ -206,7 +206,7 @@
 \section{SKILLS}
  \begin{itemize}[leftmargin=0in, label={}, itemsep=0.4pt]
     \small{\item{
-     \textbf{Technical Skills} {: C, Java, Python, JavaScript, SQL, Git, React.js, Node.js, Spring, Docker, DevOps, Wazuh, SIEM, OpenSearch, Kestra, Cybersecurity, Unix}\vspace{1pt} \\
+     \textbf{Technical Skills} {: C, Java, Python, JavaScript, TypeScript, SQL, Git, React.js, Node.js, Docker, Ansible, Wazuh, SIEM, OpenSearch, Trigger.dev, Cybersecurity, Unix}\vspace{1pt} \\
      \textbf{Languages} {: Italian (Native), English (C1 Advanced), Spanish (A2)}\vspace{1pt} \\
      \textbf{Soft Skills} {: Time Management, Organisation, Problem Solving, Communication, Teamwork}
     }}

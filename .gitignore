@@ -21,4 +21,6 @@
 
 # OS generated files
 .DS_Store
-Thumbs.db
+# Private / signed documents
+RelazioneTirocinioPorpora-signed.pdf
+*.signed.pdf

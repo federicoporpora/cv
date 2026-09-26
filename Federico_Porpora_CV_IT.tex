@@ -46,12 +46,12 @@
 \renewcommand{\footrulewidth}{0pt}
 \setlength{\footskip}{3.6pt}
 
-% Adjust margins - slightly tighter top/bottom
+% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{0in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.65in}
-\addtolength{\textheight}{1.55in}
+\addtolength{\topmargin}{-.48in}
+\addtolength{\textheight}{1.20in}
 
 \urlstyle{same}
 
@@ -61,7 +61,7 @@
 
 % sans serif sections - reduced spacing
 \titleformat {\section}{
-    \bfseries \vspace{-3pt} \raggedright \large % header section
+    \bfseries \vspace{-4pt} \raggedright \large % header section
 }{}{0em}{}[\color{light-grey} {\titlerule[1.5pt]} \vspace{1pt}]
 
 %-------------------------
@@ -75,21 +75,21 @@
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & {\color{dark-grey}\small #2}\vspace{0pt}\\ % top row of resume entry
       \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-8pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \vspace{-1pt}\item
+    \vspace{-4pt}\item
     \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
       #1 & {\color{dark-grey}} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-8pt}
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-4pt}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0.7pt, parsep=0pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0.8pt, parsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
 
 \color{text-grey}
@@ -117,11 +117,11 @@
 \section{ISTRUZIONE E FORMAZIONE}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Alma Mater Studiorum - Università di Bologna}{Sett. 2023 -- Dic. 2026 (Previsto)}
-      {Laurea in Ingegneria Informatica}{Bologna, Italia}
+      {Alma Mater Studiorum - Università di Bologna}{Sett. 2023 -- Presente}
+      {Laurea Triennale e Magistrale in Ingegneria Informatica}{Bologna, Italia}
       \resumeItemListStart
-        \resumeItem{\textbf{Corsi Principali}: Algoritmi e Strutture Dati, Sistemi Operativi (Unix), Architettura dei Calcolatori, Reti e Socket, Architetture Web, Ingegneria del Software, Cybersecurity.}
-        \resumeItem{In corso all'ultimo semestre; discussione della tesi prevista per Dicembre 2026.}
+        \resumeItem{Studente di Laurea Magistrale; discussione della tesi triennale prevista per Dicembre 2026.}
+        \resumeItem{\textbf{Corsi Principali}: Algoritmi e Strutture Dati, Sistemi Operativi (Unix), Architetture, Reti, Ingegneria del Software, Cybersecurity.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -130,13 +130,12 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Cyberloop}{Apr. 2026 -- Lug. 2026}
-      {Tirocinante Cyber Security \& DevOps}{Remoto / Italia}
+      {Cyberloop}{Apr. 2026 -- Sett. 2026}
+      {Tirocinante Cyber Security \& DevOps}{Cesena, Italia}
       \resumeItemListStart
-        \resumeItem{Progettazione e deployment di uno stack completo SIEM e Incident Management con \textbf{Docker Compose}, integrando \textbf{Wazuh XDR}, \textbf{DFIR Iris} e \textbf{OpenSearch}.}
-        \resumeItem{Sviluppo di una pipeline di incident response automatizzata con AI tramite \textbf{Kestra} e LLM locali (\textbf{Ollama} con qwen2.5) per analizzare alert e isolare nodi di rete con Wazuh Active Response.}
-        \resumeItem{Creazione di script Python per generare regole \textbf{ElastAlert2} per rilevamento anomalie basato su soglie, monitorando API ed endpoint.}
-        \resumeItem{Configurazione di VM Windows/Linux con agenti Sysmon e Wazuh per File Integrity Monitoring (FIM) e rilevamento ransomware in tempo reale.}
+        \resumeItem{Rilascio in produzione di una pipeline di risposta autonoma agli incidenti per il Blue Team, velocizzando il triage degli allarmi e riducendo il bias da falsi positivi.}
+        \resumeItem{Implementazione di un modulo RAG con ChromaDB e nomic-embed-text per arricchire i prompt tramite similarità coseno e istruire i casi in DFIR IRIS.}
+        \resumeItem{Orchestrazione a eventi con Trigger.dev, regole Wazuh mappate su MITRE ATT\&CK, automazione Ansible e contenimento su Windows Filtering Platform.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -160,11 +159,20 @@
 \section{PROGETTI PERSONALI}
   \resumeSubHeadingListStart
     \resumeProjectHeading
+      {\textbf{Autonomous Cyber-Response Framework} $|$ \emph{Python, TypeScript, Wazuh, ChromaDB, Ollama, Docker}}{}
+      \resumeItemListStart
+        \resumeItem{Progettazione di una pipeline SOAR con inferenza LLM on-premise tramite Ollama, garantendo piena conformità GDPR e sovranità del dato senza fughe di telemetria.}
+        \resumeItem{Sviluppo di un modulo RAG con ChromaDB e nomic-embed-text per vettorializzare allarmi sintetizzati e recuperare i casi più rilevanti per similarità coseno arricchendo il prompt.}
+        \resumeItem{Automazione del contenimento dell'endpoint con Wazuh Active Response su Windows Filtering Platform, con validazione su 27 allarmi enterprise e scenari di attacco reali.}
+        \resumeItem{Live Demo: \url{https://federicoporpora.github.io/autonomous-cyber-response}}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
       {\textbf{StudyLink Platform} $|$ \emph{React.js, Node.js, SQL, API REST}}{}
       \resumeItemListStart
         \resumeItem{Progettazione e sviluppo di un'applicazione web full-stack per la condivisione di risorse universitarie.}
         \resumeItem{Autenticazione sicura (JWT), sviluppo API RESTful e ottimizzazione schema relazionale (SQL) per garantire integrità dei dati.}
-        \resumeItem{Live Demo: \url{https://federicoporpora.github.io/studyLink-live}}
+        \resumeItem{Live Demo: \url{https://federicoporpora.github.io/StudyLink}}
       \resumeItemListEnd
 
     \resumeProjectHeading
@@ -173,14 +181,6 @@
         \resumeItem{Sviluppo di un motore di coaching autonomo per sport di endurance integrato con Intervals.icu tramite API REST.}
         \resumeItem{Automazione della pianificazione degli allenamenti, monitoraggio dei parametri fisiologici e analisi delle attività.}
         \resumeItem{Codice sorgente: \url{https://github.com/federicoporpora/intervals-icu-coach}}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Autonomous Cyber-Response Framework} $|$ \emph{Python, ChromaDB, Ollama, Wazuh, Docker}}{}
-      \resumeItemListStart
-        \resumeItem{Sviluppo di una pipeline di cyber-response autonoma con Wazuh XDR, OpenSearch, DFIR IRIS e LLM locali (Ollama) per automatizzare il triage e mitigare l'alert fatigue nel SOC.}
-        \resumeItem{Modulo RAG con ChromaDB e nomic-embed-text: vettorializzazione allarmi, recupero top-N per similarità coseno e arricchimento prompt con response di produzione, IoC e tattiche MITRE D3FEND.}
-        \resumeItem{Isolamento automatico dell'endpoint in tempo reale tramite Windows Filtering Platform (WFP) con tempo medio di risposta di approx. 60s.}
       \resumeItemListEnd
       
     \resumeProjectHeading
@@ -206,7 +206,7 @@
 \section{COMPETENZE E INTERESSI}
  \begin{itemize}[leftmargin=0in, label={}, itemsep=0.4pt]
     \small{\item{
-     \textbf{Competenze Tecniche} {: C, Java, Python, JavaScript, SQL, Git, React.js, Node.js, Spring, Docker, DevOps, Wazuh, SIEM, OpenSearch, Kestra, Cybersecurity, Unix}\vspace{1pt} \\
+     \textbf{Competenze Tecniche} {: C, Java, Python, JavaScript, TypeScript, SQL, Git, React.js, Node.js, Docker, Ansible, Wazuh, SIEM, OpenSearch, Trigger.dev, Cybersecurity, Unix}\vspace{1pt} \\
      \textbf{Lingue} {: Italiano (Madrelingua), Inglese (C1 Advanced), Spagnolo (A2)}\vspace{1pt} \\
      \textbf{Soft Skills} {: Gestione del Tempo, Organizzazione, Problem Solving, Comunicazione, Teamwork}
     }}
